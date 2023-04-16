@@ -45,6 +45,17 @@ Run | Training Dataset Size | Epochs | Accuracy   | f1-score | Training Time |
 --- | --------------------- | ------ | ---------- | -------- | ------------- |
 1   | Auto                  | 8      | 0.937      | 0.936    | 10:43         |
 
+The labels in the dataset are LABEL_0, LABEL_1, etc., which isn't very human-readable. The following table shows the mapping between the labels and the emotions:
+
+Original Label | Emotion
+-------------- | -------
+LABEL_0        | sadness
+LABEL_1        | joy
+LABEL_2        | love
+LABEL_3        | anger
+LABEL_4        | fear
+LABEL_5        | surprise
+
 ## Using the Model
 
 The trained model can be used to predict the sentiment of a text. The following code snippet can be used to do so:
