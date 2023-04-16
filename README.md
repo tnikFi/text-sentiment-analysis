@@ -35,6 +35,30 @@ Run | Training Dataset Size | Epochs | Accuracy   | f1-score | Training Time |
 2   | 3000                  | 2      | 0.873      | 0.876    | 02:10         |
 3   | 10000                 | 8      | 0.918      | 0.917    | 24:00         |
 
-## Notes
+### Emotion Dataset
 
-All test runs were done with a batch size of 16. This was limited by the amount of memory available on my GPU.
+The emotion dataset was used to train a classifier that can predict the emotion of a text. The emotions are: anger, fear, joy, love, sadness, and surprise.
+
+Batch size used for training was 64.
+
+Run | Training Dataset Size | Epochs | Accuracy   | f1-score | Training Time |
+--- | --------------------- | ------ | ---------- | -------- | ------------- |
+1   | Auto                  | 8      | 0.937      | 0.936    | 10:43         |
+
+## Using the Model
+
+The trained model can be used to predict the sentiment of a text. The following code snippet can be used to do so:
+
+```python
+from transformers import pipeline
+
+classifier = pipeline("sentiment-analysis", model="path/to/model/directory", tokenizer="bert-base-uncased")
+prediction = classifier("This is a great example input!")
+
+print(prediction)
+```
+
+## References
+
+1. [Getting Started with Sentiment Analysis using Python](https://huggingface.co/blog/sentiment-analysis-python) - Federico Pascual, Hugging Face Blog
+2. [bhadreshpsavani/ExploringSentimentalAnalysis](https://github.com/bhadreshpsavani/ExploringSentimentalAnalysis) - Bhadresh Savani, GitHub
