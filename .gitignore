@@ -130,3 +130,6 @@ dmypy.json
 
 # Training data
 *.csv
+
+# Training results
+results/
